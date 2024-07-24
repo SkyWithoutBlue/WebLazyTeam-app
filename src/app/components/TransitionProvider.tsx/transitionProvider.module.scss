@@ -1,0 +1,45 @@
+.providerWrapper {
+	width: 100%;
+	background: radial-gradient(
+		89.76% 53.41% at 76.46% 53.61%,
+		rgb(182, 226, 251) 0%,
+		rgb(168, 195, 250) 44.49999928474426%,
+		rgb(151, 156, 248) 100%
+	);
+}
+.providerTop {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: #b6e2fb;
+	border-bottom-right-radius: 100px;
+	border-bottom-left-radius: 100px;
+	z-index: 40;
+}
+.providerMiddle {
+	position: fixed;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: white;
+	font-size: 6rem;
+	line-height: 1;
+	cursor: default;
+	z-index: 40;
+	width: fit-content;
+	height: fit-content;
+}
+.providerBottom {
+	position: fixed;
+	bottom: 0;
+	z-index: 30;
+	width: 100vw;
+	height: 100vh;
+	background-color: #b6e2fb;
+}
+
+.transitionProvideWrapper {
+	height: calc(100vh - 100px);
+}
