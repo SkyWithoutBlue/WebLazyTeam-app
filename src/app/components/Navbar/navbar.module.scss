@@ -5,7 +5,7 @@
 	padding-left: 16px;
 	padding-right: 16px;
 	align-items: center;
-	height: 120px;
+	height: 100px;
 
 	@media (min-width: 640px) {
 		padding-left: 32px;
@@ -48,16 +48,7 @@
 .secondaryColor {
 	color: #fbf080;
 }
-.logoContainer {
-	display: flex;
-	justify-content: center;
-	margin-top: 20px;
-	font-family: Rubik;
 
-	@media (min-width: 1024px) {
-		display: flex;
-	}
-}
 .logoLink {
 	padding: 0.5rem;
 	border-radius: 0.375rem;

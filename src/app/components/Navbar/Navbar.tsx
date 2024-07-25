@@ -1,9 +1,9 @@
 'use client'
 import { motion } from 'framer-motion'
-import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { useState } from 'react'
 import Navlink from '../Navlink/Navlink'
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import styles from './navbar.module.scss'
 
 const links = [
@@ -67,28 +67,17 @@ const Navbar = () => {
 			opacity: 1,
 		},
 	}
-	const { theme, setTheme } = useTheme()
+
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.navTopContainer}>
-				<div className={styles.logoContainer}>
-					<div className='flex flex-row'>
-						<button
-							className='bg-white text-black rounded-full w-10 h-10'
-							onClick={() => setTheme('light')}
-						>
-							LHT
-						</button>
-						<button
-							className='bg-black text-white rounded-full w-10 h-10'
-							onClick={() => setTheme('dark')}
-						>
-							DRK
-						</button>
-					</div>
+				<div className='flex justify-left md:justify-center gap-6'>
 					<Link href='/' className={styles.logoLink}>
 						WebLazyTeam
 					</Link>
+					<div className='flex justify-center'>
+						<ThemeSwitcher />
+					</div>
 				</div>
 
 				<div className={styles.links}>

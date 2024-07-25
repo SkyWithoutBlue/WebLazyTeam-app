@@ -1,6 +1,7 @@
 'use client'
 import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar'
 import styles from './transitionProvider.module.scss'
 
@@ -37,7 +38,11 @@ const TransitionProvider = ({
 
 				<Navbar />
 
-				<div className={styles.transitionProviderWrapper}>{children}</div>
+				<div className={styles.transitionProviderWrapper}>
+					{children}
+
+					<Footer />
+				</div>
 			</div>
 		</AnimatePresence>
 	)

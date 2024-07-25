@@ -53,7 +53,8 @@ export function Button({
 				</MovingBorder>
 			</div>
 
-			<div
+			<motion.div
+				whileTap={{ scale: 0.95 }}
 				className={cn(
 					'relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-3xl- antialiased',
 					className
@@ -63,7 +64,7 @@ export function Button({
 				}}
 			>
 				{children}
-			</div>
+			</motion.div>
 		</Component>
 	)
 }

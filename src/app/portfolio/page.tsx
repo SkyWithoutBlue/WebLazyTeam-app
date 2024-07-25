@@ -1,17 +1,6 @@
 'use client'
-import { motion } from 'framer-motion'
-import styles from './portfolio.module.scss'
 const PortfolioPage = () => {
-	return (
-		<motion.div
-			className={styles.motionContainer}
-			initial={{ y: '-200vh' }}
-			animate={{ y: '0%' }}
-			transition={{ duration: 1 }}
-		>
-			<div>Контакты</div>
-		</motion.div>
-	)
+	return <div>Контакты</div>
 }
 
 export default PortfolioPage

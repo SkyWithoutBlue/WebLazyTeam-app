@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { Rubik } from 'next/font/google'
 
 const RubikFont400 = Rubik({
@@ -5,6 +6,16 @@ const RubikFont400 = Rubik({
 	display: 'swap',
 	weight: '400',
 })
+const textAnimation = {
+	hidden: {
+		x: 100,
+		opacity: 0,
+	},
+	visible: {
+		x: 0,
+		opacity: 1,
+	},
+}
 const ServiceSection = () => {
 	return (
 		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto '>
@@ -22,18 +33,39 @@ const ServiceSection = () => {
 								RubikFont400.className
 							}`}
 						>
-							<li className={RubikFont400.className}>
+							<motion.li
+								initial='hidden'
+								whileInView='visible'
+								transition={{ duration: 2 }}
+								viewport={{ once: true }}
+								variants={textAnimation}
+								className={RubikFont400.className}
+							>
 								Корпоративные сайты: Создаем стильные и функциональные сайты для
 								бизнеса
-							</li>
-							<li className={RubikFont400.className}>
+							</motion.li>
+							<motion.li
+								initial='hidden'
+								whileInView='visible'
+								transition={{ duration: 2 }}
+								viewport={{ once: true }}
+								variants={textAnimation}
+								className={RubikFont400.className}
+							>
 								Интернет-магазины: Разработка удобных и безопасных платформ для
 								онлайн-продаж
-							</li>
-							<li className={RubikFont400.className}>
+							</motion.li>
+							<motion.li
+								initial='hidden'
+								whileInView='visible'
+								transition={{ duration: 2 }}
+								viewport={{ once: true }}
+								variants={textAnimation}
+								className={RubikFont400.className}
+							>
 								Лендинги: Эффективные одностраничные сайты для продвижения ваших
 								услуг или продуктов
-							</li>
+							</motion.li>
 						</ul>
 					</div>
 					<div>
@@ -45,14 +77,28 @@ const ServiceSection = () => {
 								RubikFont400.className
 							}`}
 						>
-							<li className={RubikFont400.className}>
+							<motion.li
+								initial='hidden'
+								whileInView='visible'
+								transition={{ duration: 2 }}
+								viewport={{ once: true }}
+								variants={textAnimation}
+								className={RubikFont400.className}
+							>
 								UI/UX дизайн: Разработка интуитивно понятного и привлекательного
 								интерфейса.
-							</li>
-							<li className={RubikFont400.className}>
+							</motion.li>
+							<motion.li
+								initial='hidden'
+								whileInView='visible'
+								transition={{ duration: 2 }}
+								viewport={{ once: true }}
+								variants={textAnimation}
+								className={RubikFont400.className}
+							>
 								Брендинг: Создание уникального визуального стиля, который
 								выделит ваш бизнес.
-							</li>
+							</motion.li>
 						</ul>
 					</div>
 					<div>
@@ -64,14 +110,28 @@ const ServiceSection = () => {
 								RubikFont400.className
 							}`}
 						>
-							<li className={RubikFont400.className}>
+							<motion.li
+								initial='hidden'
+								whileInView='visible'
+								transition={{ duration: 2 }}
+								viewport={{ once: true }}
+								variants={textAnimation}
+								className={RubikFont400.className}
+							>
 								Техническая поддержка: Обеспечиваем бесперебойную работу вашего
 								сайта.
-							</li>
-							<li className={RubikFont400.className}>
+							</motion.li>
+							<motion.li
+								initial='hidden'
+								whileInView='visible'
+								transition={{ duration: 2 }}
+								viewport={{ once: true }}
+								variants={textAnimation}
+								className={RubikFont400.className}
+							>
 								SEO-оптимизация: Помогаем улучшить видимость вашего сайта в
 								поисковых системах.
-							</li>
+							</motion.li>
 						</ul>
 					</div>
 				</div>

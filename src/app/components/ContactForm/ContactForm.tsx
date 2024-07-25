@@ -1,9 +1,11 @@
 'use client'
 
 import axios from 'axios'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { PulseLoader } from 'react-spinners'
+
 import { Button } from '../ui/moving-border'
 import Alert from './Alert'
 
@@ -58,7 +60,7 @@ export default function ContactForm() {
 	}
 
 	return (
-		<div className='y-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
+		<motion.div className='y-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
 			<h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white py-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
 				Свяжитесь с нами
 			</h2>
@@ -164,6 +166,6 @@ export default function ContactForm() {
 					)}
 				</div>
 			</form>
-		</div>
+		</motion.div>
 	)
 }
