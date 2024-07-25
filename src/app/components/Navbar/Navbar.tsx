@@ -73,7 +73,6 @@ const Navbar = () => {
 			<div className={styles.navTopContainer}>
 				<div className={styles.logoContainer}>
 					<div className='flex flex-row'>
-						The current theme is: {theme}
 						<button
 							className='bg-white text-black rounded-full w-10 h-10'
 							onClick={() => setTheme('light')}

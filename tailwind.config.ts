@@ -9,7 +9,11 @@ module.exports = {
 	content: ['./src/**/*.{ts,tsx}'],
 	darkMode: 'class',
 	theme: {
-		// rest of the code
+		extends: {
+			fontFamily: {
+				rubikMonoOne: ['var(--font-rubikMonoOne)'],
+			},
+		},
 	},
 	plugins: [
 		// rest of the code

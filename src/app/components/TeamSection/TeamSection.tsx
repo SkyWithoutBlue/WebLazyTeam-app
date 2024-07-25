@@ -1,0 +1,76 @@
+import Image from 'next/image'
+const TeamSection = () => {
+	return (
+		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto '>
+			<div className='max-w-6xl m-auto p-4 relative'>
+				<h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase'>
+					команда
+				</h1>
+				<div className='flex flex-col gap-7'>
+					<div className='flex hover:bg-red-300 items-center gap-12 rounded-full'>
+						<Image src='/Member_Designer.png' alt='' width={176} height={176} />
+						<div className='flex flex-col gap-5'>
+							<h1 className='text-[#979CF8]'>Дизайнер</h1>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+								commodi esse distinctio perferendis, obcaecati nam repudiandae
+								reiciendis vitae possimus, adipisci dolore maiores nesciunt
+								animi? Beatae esse cum reprehenderit cumque vero?
+							</p>
+						</div>
+					</div>
+					<div className='flex hover:bg-red-300 items-center gap-12 rounded-full'>
+						<Image src='/Member_Designer.png' alt='' width={176} height={176} />
+						<div className='flex flex-col gap-5'>
+							<h1 className='text-[#979CF8]'>Дизайнер</h1>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+								commodi esse distinctio perferendis, obcaecati nam repudiandae
+								reiciendis vitae possimus, adipisci dolore maiores nesciunt
+								animi? Beatae esse cum reprehenderit cumque vero?
+							</p>
+						</div>
+					</div>
+					<div className='flex hover:bg-red-300 items-center gap-12 rounded-full'>
+						<Image src='/Member_Designer.png' alt='' width={176} height={176} />
+						<div className='flex flex-col gap-5'>
+							<h1 className='text-[#979CF8]'>Дизайнер</h1>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+								commodi esse distinctio perferendis, obcaecati nam repudiandae
+								reiciendis vitae possimus, adipisci dolore maiores nesciunt
+								animi? Beatae esse cum reprehenderit cumque vero?
+							</p>
+						</div>
+					</div>
+					<div className='flex hover:bg-red-300 items-center gap-12 rounded-full'>
+						<Image src='/Member_Designer.png' alt='' width={176} height={176} />
+						<div className='flex flex-col gap-5'>
+							<h1 className='text-[#979CF8]'>Дизайнер</h1>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+								commodi esse distinctio perferendis, obcaecati nam repudiandae
+								reiciendis vitae possimus, adipisci dolore maiores nesciunt
+								animi? Beatae esse cum reprehenderit cumque vero?
+							</p>
+						</div>
+					</div>
+					<div className='flex hover:bg-red-300 items-center gap-12 rounded-full'>
+						<Image src='/Member_Designer.png' alt='' width={176} height={176} />
+						<div className='flex flex-col gap-5'>
+							<h1 className='text-[#979CF8]'>Дизайнер</h1>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+								commodi esse distinctio perferendis, obcaecati nam repudiandae
+								reiciendis vitae possimus, adipisci dolore maiores nesciunt
+								animi? Beatae esse cum reprehenderit cumque vero?
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	)
+}
+
+export default TeamSection
