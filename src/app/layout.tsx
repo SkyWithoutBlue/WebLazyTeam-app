@@ -25,7 +25,11 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html suppressHydrationWarning lang='ru' className='overflow-x-hidden'>
+		<html
+			suppressHydrationWarning
+			lang='ru'
+			className='overflow-x-hidden min-w-[320px]'
+		>
 			<body className={rubikMonoOne.className}>
 				<ThemeProvider
 					attribute='class'

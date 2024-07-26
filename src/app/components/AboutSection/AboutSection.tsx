@@ -16,7 +16,7 @@ const AboutSection = () => {
 	return (
 		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto'>
 			<div className='flex flex-col max-w-6xl m-auto p-4'>
-				<h1 className='flex justify-center items-center m-auto uppercase text-4xl sm:text-5xl'>
+				<h1 className='flex justify-center items-center m-auto uppercase text-4xl sm:text-5xl p-2'>
 					О НАС
 				</h1>
 				<motion.div
@@ -25,7 +25,7 @@ const AboutSection = () => {
 					transition={{ duration: 1 }}
 					viewport={{ once: true }}
 					variants={underlineAnimation}
-					className='w-full h-1 bg-red-300 m-4'
+					className='w-full h-1 bg-red-300 my-4'
 				></motion.div>
 				<div className='flex flex-col md:flex-row relative h-full w-full items-center'>
 					<motion.div

@@ -19,7 +19,7 @@ const ServiceSection = () => {
 						transition={{ duration: 2 }}
 						viewport={{ once: true }}
 						variants={textAnimation}
-						className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl w-full'
+						className='flex justify-center items-center m-auto uppercase text-4xl sm:text-5xl p-2'
 					>
 						Услуги
 					</motion.h1>

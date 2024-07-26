@@ -71,11 +71,11 @@ const Navbar = () => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.navTopContainer}>
-				<div className='flex justify-left md:justify-center gap-6'>
-					<Link href='/' className={styles.logoLink}>
+				<div className='flex justify-left md:justify-center gap-6 flex-col-reverse md:flex-row sm:m-6 md:mt-[55px]'>
+					<Link href='/' className='text-xl'>
 						WebLazyTeam
 					</Link>
-					<div className='flex justify-center'>
+					<div className='flex justify-start'>
 						<ThemeSwitcher />
 					</div>
 				</div>

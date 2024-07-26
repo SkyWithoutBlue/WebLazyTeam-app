@@ -27,7 +27,7 @@ export default function ContactForm() {
 		reset,
 		formState: { errors },
 	} = useForm<FormInput>()
-
+	const phoneRegex = /^(\+7|8|7|\+8)?(\d{10})?$/
 	const botToken = `6908904529:AAGOcvUq1b3Uyos0g4UJtqwIDbUjEDqOw6I`
 	const chatId = `-4211624380`
 
@@ -60,11 +60,11 @@ export default function ContactForm() {
 	}
 
 	return (
-		<motion.div className='y-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
-			<h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white py-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
+		<motion.div className='y-8 px-4 mx-auto max-w-screen-md pb-4'>
+			<h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white py-10 mx-auto max-w-screen-md'>
 				Свяжитесь с нами
 			</h2>
-			<p className='mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl'>
+			<p className='mb-8 lg:mb-10 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl'>
 				Получите бесплатную консультацию!
 			</p>
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -97,7 +97,13 @@ export default function ContactForm() {
 					<input
 						type='tel'
 						id='tel'
-						{...register('tel', { required: 'Please enter your name' })}
+						{...register('tel', {
+							required: 'Пожалуйста введите ваш номер телефона',
+							pattern: {
+								value: phoneRegex,
+								message: 'Введите корректный номер телефона',
+							},
+						})}
 						name='tel'
 						placeholder='+7-(123)-(456-78-90)'
 						className='shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
@@ -115,11 +121,10 @@ export default function ContactForm() {
 						type='email'
 						id='email'
 						{...register('email', {
-							required: 'Please enter email',
+							required: 'Пожалуйста введите вашу почту',
 							pattern: {
 								value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-								message:
-									'Invalid email address. Please use example@example.com format',
+								message: 'Пожалуйста используйте формат: example@example.com',
 							},
 						})}
 						aria-invalid={errors.email ? 'true' : 'false'}
@@ -138,7 +143,9 @@ export default function ContactForm() {
 					</label>
 					<textarea
 						id='message'
-						{...register('message', { required: 'Please enter your message' })}
+						{...register('message', {
+							required: 'Пожалуйста введите ваше сообщение',
+						})}
 						placeholder='Ваше сообщение'
 						className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
 						rows={4}
@@ -148,7 +155,7 @@ export default function ContactForm() {
 					)}
 
 					{showButton && (
-						<div className='flex items-center justify-center'>
+						<div className='flex items-center justify-center mb-6'>
 							<Button
 								type='submit'
 								borderRadius='1.75rem'

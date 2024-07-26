@@ -5,12 +5,12 @@ const teamMembers = [
 	{
 		photo: '/',
 		role: 'Менеджер',
-		desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,commodi esse distinctio perferendis, obcaecati nam repudiandae reiciendis vitae possimus, adipisci dolore maiores nesciuntanimi? Beatae esse cum reprehenderit cumque vero?',
+		desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,commodi esse distinctio perferendis, obcaecati nam repudiandae reiciendis vitae possimus?',
 	},
 	{
 		photo: '/Member_Designer.png',
 		role: 'Менеджер',
-		desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,commodi esse distinctio perferendis, obcaecati nam repudiandae reiciendis vitae possimus, adipisci dolore maiores nesciuntanimi? Beatae esse cum reprehenderit cumque vero?',
+		desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,commodi esse distinctio perferendis, obcaecati nam repudiandae reiciendis vitae possimus?',
 	},
 	{
 		photo: '/Member_Designer.png',
@@ -33,7 +33,7 @@ const TeamSection = () => {
 	return (
 		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto '>
 			<div className='max-w-6xl m-auto p-4 relative'>
-				<motion.h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase'>
+				<motion.h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4'>
 					команда
 				</motion.h1>{' '}
 				<motion.div
@@ -42,7 +42,7 @@ const TeamSection = () => {
 					transition={{ duration: 1 }}
 					viewport={{ once: true }}
 					variants={underlineAnimation}
-					className='w-full h-1 bg-red-300 m-4'
+					className='w-full h-1 bg-red-300 my-4'
 				></motion.div>
 				<div className='flex flex-col gap-7'>
 					<div className='flex flex-col gap-10'>
@@ -57,20 +57,29 @@ const TeamSection = () => {
 							>
 								<div className='flex hover:bg-indigo-600 items-center gap-12 rounded-full'>
 									<Image
+										className='w-24 sm:w-36 sm:h-36 md:w-44 md:h-44'
 										src='/Member_Designer.png'
 										alt=''
 										width={176}
 										height={176}
 									/>
 									<div className='flex flex-col gap-5'>
-										<h1 className='text-[#979CF8]'>{el.role}</h1>
-										<p>{el.desc}</p>
+										<h1 className='text-[#979CF8] text-[18px]'>{el.role}</h1>
+										<p className='text-[14px] sm:text-[18px]'>{el.desc}</p>
 									</div>
 								</div>
 							</motion.div>
 						))}
 					</div>
 				</div>
+				<motion.div
+					initial='hidden'
+					whileInView='visible'
+					transition={{ duration: 1 }}
+					viewport={{ once: true }}
+					variants={underlineAnimation}
+					className='w-full h-1 bg-red-300 my-4'
+				></motion.div>
 			</div>
 		</div>
 	)
