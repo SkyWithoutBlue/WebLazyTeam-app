@@ -1,5 +1,6 @@
+import { underlineAnimation } from '@/app/utils/motion'
+import { motion } from 'framer-motion'
 import { PinContainer } from '../ui/3d-pin'
-
 const PortfolioSection = () => {
 	return (
 		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto '>
@@ -7,6 +8,14 @@ const PortfolioSection = () => {
 				<h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase'>
 					Портфолио
 				</h1>
+				<motion.div
+					initial='hidden'
+					whileInView='visible'
+					transition={{ duration: 1 }}
+					viewport={{ once: true }}
+					variants={underlineAnimation}
+					className='w-full h-1 bg-red-300 m-4'
+				></motion.div>
 				<div>
 					<div className='flex flex-col xl:flex-row'>
 						<div className='h-[40rem] w-full flex items-center justify-center '>

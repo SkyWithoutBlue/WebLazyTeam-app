@@ -1,3 +1,8 @@
+import {
+	imageAnimation,
+	textAnimation,
+	underlineAnimation,
+} from '@/app/utils/motion'
 import { motion } from 'framer-motion'
 import { Rubik } from 'next/font/google'
 import Image from 'next/image'
@@ -7,27 +12,6 @@ const RubikFont400 = Rubik({
 	weight: '400',
 })
 
-const imageAnimation = {
-	hidden: {
-		x: -100,
-		opacity: 0,
-	},
-	visible: {
-		x: 0,
-		opacity: 1,
-	},
-}
-const textAnimation = {
-	hidden: {
-		x: 100,
-		opacity: 0,
-	},
-	visible: {
-		x: 0,
-		opacity: 1,
-	},
-}
-
 const AboutSection = () => {
 	return (
 		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto'>
@@ -35,6 +19,14 @@ const AboutSection = () => {
 				<h1 className='flex justify-center items-center m-auto uppercase text-4xl sm:text-5xl'>
 					О НАС
 				</h1>
+				<motion.div
+					initial='hidden'
+					whileInView='visible'
+					transition={{ duration: 1 }}
+					viewport={{ once: true }}
+					variants={underlineAnimation}
+					className='w-full h-1 bg-red-300 m-4'
+				></motion.div>
 				<div className='flex flex-col md:flex-row relative h-full w-full items-center'>
 					<motion.div
 						initial='hidden'

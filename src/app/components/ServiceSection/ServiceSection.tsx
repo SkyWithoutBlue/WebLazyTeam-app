@@ -1,33 +1,47 @@
 import { motion } from 'framer-motion'
 import { Rubik } from 'next/font/google'
 
+import { textAnimation, underlineAnimation } from '@/app/utils/motion'
 const RubikFont400 = Rubik({
 	subsets: ['latin'],
 	display: 'swap',
 	weight: '400',
 })
-const textAnimation = {
-	hidden: {
-		x: 100,
-		opacity: 0,
-	},
-	visible: {
-		x: 0,
-		opacity: 1,
-	},
-}
+
 const ServiceSection = () => {
 	return (
 		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto '>
 			<div className='flex flex-col max-w-6xl m-auto p-4'>
-				<div className='flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 p-3 sm:p-4'>
-					<h1 className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl'>
+				<div className='flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 p-3 sm:p-4 '>
+					<motion.h1
+						initial='hidden'
+						whileInView='visible'
+						transition={{ duration: 2 }}
+						viewport={{ once: true }}
+						variants={textAnimation}
+						className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl w-full'
+					>
 						Услуги
-					</h1>
+					</motion.h1>
+					<motion.div
+						initial='hidden'
+						whileInView='visible'
+						transition={{ duration: 1 }}
+						viewport={{ once: true }}
+						variants={underlineAnimation}
+						className='w-full h-1 bg-red-300 my-4'
+					></motion.div>
 					<div>
-						<h2 className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl'>
+						<motion.h2
+							initial='hidden'
+							whileInView='visible'
+							transition={{ duration: 2 }}
+							viewport={{ once: true }}
+							variants={textAnimation}
+							className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl'
+						>
 							Разработка сайтов
-						</h2>
+						</motion.h2>
 						<ul
 							className={`${'list-disc sm:text-2xl md:text-3xl lg:text-4xl'}+ ${
 								RubikFont400.className
@@ -69,9 +83,16 @@ const ServiceSection = () => {
 						</ul>
 					</div>
 					<div>
-						<h2 className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl'>
+						<motion.h2
+							initial='hidden'
+							whileInView='visible'
+							transition={{ duration: 2 }}
+							viewport={{ once: true }}
+							variants={textAnimation}
+							className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl'
+						>
 							Дизайн
-						</h2>
+						</motion.h2>
 						<ul
 							className={`${'list-disc sm:text-2xl md:text-3xl lg:text-4xl'}+ ${
 								RubikFont400.className
@@ -102,9 +123,16 @@ const ServiceSection = () => {
 						</ul>
 					</div>
 					<div>
-						<h2 className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl'>
+						<motion.h2
+							initial='hidden'
+							whileInView='visible'
+							transition={{ duration: 2 }}
+							viewport={{ once: true }}
+							variants={textAnimation}
+							className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl'
+						>
 							Поддержка и обслуживание
-						</h2>
+						</motion.h2>
 						<ul
 							className={`${'list-disc sm:text-2xl md:text-3xl lg:text-4xl'}+ ${
 								RubikFont400.className
