@@ -6,7 +6,7 @@ const ContactSection = () => {
 		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto '>
 			<div className='max-w-6xl m-auto p-4 relative'>
 				<div className='flex items-center justify-between flex-col-reverse lg:flex-row'>
-					<section className='bg-yellow-200 rounded-[50px] dark:bg-gray-900'>
+					<section className='bg-sky-600 rounded-[50px] dark:bg-gray-900'>
 						<ContactForm />
 					</section>
 					<div className='w-1/2 relative'>

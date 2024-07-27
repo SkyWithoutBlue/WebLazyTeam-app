@@ -1,7 +1,5 @@
-import Lottie from 'lottie-react'
+import Image from 'next/image'
 import { Button } from '../ui/moving-border'
-import animationData from './Lottie.json'
-
 const MainSection = () => {
 	return (
 		<section className='flex max-w-7xl m-auto px-4'>
@@ -20,8 +18,14 @@ const MainSection = () => {
 						Заказать
 					</Button>
 				</div>
-				<div className='relative m-2 lg:w-1/2'>
-					<Lottie animationData={animationData} loop={true} />
+				<div className='relative flex justify-center'>
+					<Image
+						className='lg:w-full'
+						src='/Hero.svg'
+						alt=''
+						width={400}
+						height={300}
+					/>
 				</div>
 			</div>
 		</section>
