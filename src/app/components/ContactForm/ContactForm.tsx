@@ -45,7 +45,7 @@ export default function ContactForm() {
 				`https://api.telegram.org/bot${botToken}/sendMessage`,
 				{
 					chat_id: chatId,
-					text: `Name: ${data.fullname}\nTel: ${data.tel}\nEmail: ${data.email}\nMessage: ${data.message}`,
+					text: `Имя: ${data.fullname}\nТелефон: ${data.tel}\nПочта: ${data.email}\nСообщение: ${data.message}`,
 				}
 			)
 			console.log('Message sent successfully:', response.data)
