@@ -69,7 +69,7 @@ const Navbar = () => {
 	}
 
 	return (
-		<div className='absolute z-50'>
+		<div className='absolute z-10'>
 			<header className={styles.wrapper}>
 				<div className={styles.navTopContainer}>
 					<div className='flex justify-left md:justify-center gap-6 flex-col-reverse md:flex-row sm:m-4 md:mt-[55px]'>
