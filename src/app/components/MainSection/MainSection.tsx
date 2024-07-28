@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import { Button } from '../ui/moving-border'
+import Stars from '../ui/Stars'
 const MainSection = () => {
 	return (
 		<section className='flex max-w-7xl m-auto px-4'>
-			<div className='flex flex-col lg:flex-row lg:justify-between min-h-screen w-screen items-center'>
+			<Stars />
+			<div className='flex flex-col lg:flex-row lg:justify-between w-screen items-center h-[90vh]'>
 				<div className='flex flex-col gap-8 mt-8 items-center sm:items-start lg:w-1/2'>
 					<h1 className='text-3xl text-white sm:text-4xl md:text-5xl sm:my-6'>
 						Создаем уникальные веб-сайты,которые работают на вас!

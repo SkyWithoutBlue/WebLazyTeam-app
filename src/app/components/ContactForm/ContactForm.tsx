@@ -119,6 +119,7 @@ export default function ContactForm() {
 						</label>
 						<input
 							type='tel'
+							maxLength={11}
 							id='tel'
 							{...register('tel', {
 								required: 'Пожалуйста введите ваш номер телефона',

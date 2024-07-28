@@ -2,9 +2,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import Footer from '../Footer/Footer'
-import Navbar from '../Navbar/Navbar'
 import styles from './transitionProvider.module.scss'
-
+import Navbar from '../Navbar/Navbar'
 const TransitionProvider = ({
 	children,
 }: Readonly<{
@@ -23,6 +22,7 @@ const TransitionProvider = ({
 					exit={{ height: '140vh' }}
 					transition={{ duration: 0.5, ease: 'easeOut' }}
 				/>
+
 				<motion.div
 					className={styles.providerMiddle}
 					initial={{ opacity: 1 }}
@@ -39,9 +39,8 @@ const TransitionProvider = ({
 					animate={{ height: '0vh', transition: { delay: 0.5 } }}
 				/>
 
-				<Navbar />
-
 				<div className={styles.transitionProviderWrapper}>
+					<Navbar />
 					{children}
 
 					<Footer />
