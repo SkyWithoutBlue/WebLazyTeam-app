@@ -4,6 +4,8 @@
 	justify-content: space-between;
 	padding-left: 16px;
 	padding-right: 16px;
+	position: relative;
+	width: 100vw;
 	align-items: center;
 	height: 100px;
 
@@ -25,7 +27,6 @@
 	flex-direction: column;
 	justify-content: center;
 	width: 100%;
-	z-index: 1;
 }
 .links {
 	display: none;
