@@ -2,10 +2,10 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
+import { listItemVariants, listVariants } from '../../utils/motion'
 import Navlink from '../Navlink/Navlink'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import styles from './navbar.module.scss'
-
 const links = [
 	{ url: '/', title: 'О нас' },
 	{ url: '/portfolio', title: 'Портфолио' },
@@ -43,28 +43,6 @@ const Navbar = () => {
 		opened: {
 			rotate: -45,
 			backgroundColor: 'rgb(255,255,255)',
-		},
-	}
-	const listVariants = {
-		closed: {
-			x: '100vw',
-		},
-		opened: {
-			x: 0,
-			transition: {
-				when: 'beforeChildren',
-				staggerChildren: 0.2,
-			},
-		},
-	}
-	const listItemVariants = {
-		closed: {
-			x: -10,
-			opacity: 0,
-		},
-		opened: {
-			x: 0,
-			opacity: 1,
 		},
 	}
 

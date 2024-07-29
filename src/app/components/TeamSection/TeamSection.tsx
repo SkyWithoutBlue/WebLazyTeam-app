@@ -31,11 +31,14 @@ const teamMembers = [
 
 const TeamSection = () => {
 	return (
-		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto '>
+		<div
+			id='crew'
+			className='bg-white text-black dark:bg-black dark:text-white  m-auto '
+		>
 			<div className='max-w-6xl m-auto p-4 relative'>
 				<motion.h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4'>
 					команда
-				</motion.h1>{' '}
+				</motion.h1>
 				<motion.div
 					initial='hidden'
 					whileInView='visible'
@@ -45,7 +48,7 @@ const TeamSection = () => {
 					className='w-full h-1 bg-red-300 my-4'
 				></motion.div>
 				<div className='flex flex-col gap-7'>
-					<div className='flex flex-col gap-10'>
+					<div className='flex flex-col gap-10 py-8'>
 						{teamMembers.map(el => (
 							<motion.div
 								initial='hidden'
@@ -55,7 +58,7 @@ const TeamSection = () => {
 								variants={textAnimation}
 								key={el.role}
 							>
-								<div className='flex hover:bg-indigo-600 items-center gap-12 rounded-full'>
+								<div className='flex hover:scale-105 items-center gap-12 rounded-full'>
 									<Image
 										className='w-24 sm:w-36 sm:h-36 md:w-44 md:h-44'
 										src='/Member_Designer.png'

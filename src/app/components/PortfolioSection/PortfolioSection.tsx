@@ -3,7 +3,10 @@ import { motion } from 'framer-motion'
 import { PinContainer } from '../ui/3d-pin'
 const PortfolioSection = () => {
 	return (
-		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto '>
+		<div
+			id='portfolio'
+			className='bg-white text-black dark:bg-black dark:text-white  m-auto '
+		>
 			<div className='max-w-6xl m-auto p-4 relative h-full'>
 				<h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4'>
 					Портфолио

@@ -3,7 +3,6 @@ const colors = require('tailwindcss/colors')
 const {
 	default: flattenColorPalette,
 } = require('tailwindcss/lib/util/flattenColorPalette')
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{ts,tsx}'],
@@ -11,7 +10,8 @@ module.exports = {
 	theme: {
 		extends: {
 			fontFamily: {
-				rubikMonoOne: ['var(--font-rubikMonoOne)'],
+				sans: ['var(--font-rubik-init)'],
+				mono: ['var(--font-rubikMonoOne)'],
 			},
 		},
 	},

@@ -10,7 +10,7 @@ const MainSection = () => {
 					<h1 className='text-3xl text-white sm:text-4xl md:text-5xl sm:my-6'>
 						Создаем уникальные веб-сайты,которые работают на вас!
 					</h1>
-					<h2 className='text-xl text-[#FBF080] sm:text-2xl md:text-3xl '>
+					<h2 className='text-xl text-[#FBF080] sm:text-2xl md:text-3xl font-sans font-semibold'>
 						Профессиональная разработка сайтов, адаптированных под ваши нужды
 					</h2>
 					<Button
@@ -20,7 +20,7 @@ const MainSection = () => {
 						Заказать
 					</Button>
 				</div>
-				<div className='relative flex justify-center h-1/2'>
+				<div className='relative flex justify-center h-1/2 pointer-events-none'>
 					<Image
 						className='lg:w-full h-1/2'
 						src='/Hero.svg'

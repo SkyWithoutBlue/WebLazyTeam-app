@@ -6,7 +6,10 @@ interface canvas {
 }
 const ContactSection = () => {
 	return (
-		<div className='bg-white text-black dark:bg-black dark:text-white  m-auto '>
+		<div
+			id='contacts'
+			className='bg-white text-black dark:bg-black dark:text-white  m-auto '
+		>
 			<div className='m-auto p-4 relative'>
 				<Stars />
 				<div className='max-w-6xl m-auto flex items-center gap-4 justify-between flex-col-reverse lg:flex-row'>

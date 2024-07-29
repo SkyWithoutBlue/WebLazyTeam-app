@@ -53,7 +53,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className={RubikFont400.className}
+								className='p-2'
 							>
 								Корпоративные сайты: Создаем стильные и функциональные сайты для
 								бизнеса
@@ -64,7 +64,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className={RubikFont400.className}
+								className='p-2'
 							>
 								Интернет-магазины: Разработка удобных и безопасных платформ для
 								онлайн-продаж
@@ -75,7 +75,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className={RubikFont400.className}
+								className='p-2'
 							>
 								Лендинги: Эффективные одностраничные сайты для продвижения ваших
 								услуг или продуктов
@@ -104,7 +104,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className={RubikFont400.className}
+								className='p-2'
 							>
 								UI/UX дизайн: Разработка интуитивно понятного и привлекательного
 								интерфейса.
@@ -115,7 +115,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className={RubikFont400.className}
+								className='p-2'
 							>
 								Брендинг: Создание уникального визуального стиля, который
 								выделит ваш бизнес.
@@ -144,7 +144,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className={RubikFont400.className}
+								className='p-2'
 							>
 								Техническая поддержка: Обеспечиваем бесперебойную работу вашего
 								сайта.
@@ -155,7 +155,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className={RubikFont400.className}
+								className='p-2'
 							>
 								SEO-оптимизация: Помогаем улучшить видимость вашего сайта в
 								поисковых системах.

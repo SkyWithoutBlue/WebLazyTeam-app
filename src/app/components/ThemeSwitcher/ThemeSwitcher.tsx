@@ -20,7 +20,7 @@ const ThemeSwitcher = () => {
 
 	const [isChecked, setIsChecked] = useState(true)
 	return (
-		<label className='inline-flex items-center relative'>
+		<label className='inline-flex items-center relative cursor-pointer'>
 			<input
 				className='peer hidden'
 				id='toggle'
