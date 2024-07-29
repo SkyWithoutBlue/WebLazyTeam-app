@@ -13,7 +13,7 @@ const ContactSection = () => {
 					<section className='bg-sky-600 rounded-[50px] dark:bg-gray-900'>
 						<ContactForm />
 					</section>
-					<div className='w-full h-full lg:!w-1/2 relative'>
+					<div className='w-full !h-[350px] lg:!w-1/2 relative'>
 						<Earth />
 					</div>
 				</div>
