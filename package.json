@@ -9,6 +9,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@hookform/resolvers": "^3.9.0",
 		"@react-three/drei": "^9.109.2",
 		"@react-three/fiber": "^8.16.8",
 		"axios": "^1.7.2",
@@ -25,7 +26,8 @@
 		"react-spinners": "^0.14.1",
 		"react-three-fiber": "^6.0.13",
 		"tailwind-merge": "^2.4.0",
-		"three": "^0.167.0"
+		"three": "^0.167.0",
+		"yup": "^1.4.0"
 	},
 	"devDependencies": {
 		"@types/node": "^20",

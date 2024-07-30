@@ -1,13 +1,29 @@
 'use client'
 
+import { yupResolver } from '@hookform/resolvers/yup'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { PulseLoader } from 'react-spinners'
+import * as yup from 'yup'
 
 import { Button } from '../ui/moving-border'
 import Alert from './Alert'
+
+// Определяем схему валидации с использованием yup
+const schema = yup.object().shape({
+	fullname: yup.string().required('Пожалуйста введите ваше имя'),
+	tel: yup
+		.string()
+		.required('Пожалуйста введите ваш номер телефона')
+		.matches(/^(\+7|8)\d{10}$/, 'Введите корректный номер телефона'),
+	email: yup
+		.string()
+		.required('Пожалуйста введите вашу почту')
+		.email('Пожалуйста используйте формат: example@example.com'),
+	message: yup.string().required('Пожалуйста введите ваше сообщение'),
+})
 
 interface FormInput {
 	fullname: string
@@ -27,8 +43,10 @@ export default function ContactForm() {
 		handleSubmit,
 		reset,
 		formState: { errors },
-	} = useForm<FormInput>()
-	const phoneRegex = /^(\+7|8|7|\+8)?(\d{10})?$/
+	} = useForm<FormInput>({
+		resolver: yupResolver(schema),
+	})
+
 	const botToken = `6908904529:AAGOcvUq1b3Uyos0g4UJtqwIDbUjEDqOw6I`
 	const chatId = `-4211624380`
 
@@ -83,101 +101,85 @@ export default function ContactForm() {
 						bgColor={'bg-red-300'}
 						icon={'❎'}
 						status='Ошибка!'
-						message='Что то пошло не так. Повторите попытку позже😢'
+						message='Что-то пошло не так. Повторите попытку позже😢'
 						onClick={removeAlert}
 					/>
 				)}
 
 				<div className='flex flex-col gap-4 text-sm md:text-base'>
 					<div className='relative'>
-						<label
-							htmlFor='fullname'
-							className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'
-						>
-							Как к вам обращаться
-						</label>
 						<input
 							type='text'
 							id='fullname'
-							{...register('fullname', {
-								required: 'Пожалуйста введите ваше имя',
-							})}
+							{...register('fullname')}
 							name='fullname'
-							placeholder='Ваше имя'
-							className='shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+							placeholder=' '
+							className='block w-full px-2.5 pb-2.5 pt-4 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:outline-none focus:ring-0 focus:border-primary-500 peer'
 						/>
+						<label
+							htmlFor='fullname'
+							className='absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75  top-4 z-10 origin-[0] bg-gray-50 px-2 peer-focus:px-2 peer-focus:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 left-1'
+						>
+							Ваше имя
+						</label>
 						{errors.fullname && (
 							<span className='text-red-500'>{errors.fullname.message}</span>
 						)}
 					</div>
 					<div className='relative'>
-						<label
-							htmlFor='tel'
-							className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'
-						>
-							Ваш номер телефона
-						</label>
 						<input
 							type='tel'
 							maxLength={11}
 							id='tel'
-							{...register('tel', {
-								required: 'Пожалуйста введите ваш номер телефона',
-								pattern: {
-									value: phoneRegex,
-									message: 'Введите корректный номер телефона',
-								},
-							})}
+							{...register('tel')}
 							name='tel'
-							placeholder='+7-(123)-(456-78-90)'
-							className='shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+							placeholder=' '
+							className='block w-full px-2.5 pb-2.5 pt-4 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:outline-none focus:ring-0 focus:border-primary-500 peer'
 						/>
+						<label
+							htmlFor='tel'
+							className='absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75  top-4 z-10 origin-[0] bg-gray-50 px-2 peer-focus:px-2 peer-focus:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 left-1'
+						>
+							Ваш номер телефона
+						</label>
 						{errors.tel && (
 							<span className='text-red-500'>{errors.tel.message}</span>
 						)}
 					</div>
 					<div className='relative'>
-						<label
-							htmlFor='subject'
-							className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'
-						>
-							Ваша почта
-						</label>
 						<input
 							type='email'
 							id='email'
-							{...register('email', {
-								required: 'Пожалуйста введите вашу почту',
-								pattern: {
-									value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-									message: 'Пожалуйста используйте формат: example@example.com',
-								},
-							})}
+							{...register('email')}
 							aria-invalid={errors.email ? 'true' : 'false'}
 							name='email'
-							placeholder='Ваш email'
-							className='block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+							placeholder=' '
+							className='block w-full px-2.5 pb-2.5 pt-4 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:outline-none focus:ring-0 focus:border-primary-500 peer'
 						/>
+						<label
+							htmlFor='email'
+							className='absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] bg-gray-50 px-2 peer-focus:px-2 peer-focus:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 left-1'
+						>
+							Ваша почта
+						</label>
 						{errors.email && (
 							<span className='text-red-500'>{errors.email.message}</span>
 						)}
 					</div>
 					<div className='relative'>
+						<textarea
+							id='message'
+							{...register('message')}
+							placeholder=' '
+							className='block w-full px-2.5 pb-2.5 pt-4 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:outline-none focus:ring-0 focus:border-primary-500 peer'
+							rows={4}
+						/>
 						<label
 							htmlFor='message'
-							className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400'
+							className='absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75  top-4 z-10 origin-[0] bg-gray-50 px-2 peer-focus:px-2 peer-focus:text-primary-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 left-1'
 						>
 							Краткое описание проекта (задачи, цели)
 						</label>
-						<textarea
-							id='message'
-							{...register('message', {
-								required: 'Пожалуйста введите ваше сообщение',
-							})}
-							placeholder='Ваше сообщение'
-							className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
-							rows={4}
-						/>
 						{errors.message && (
 							<span className='text-red-500'>{errors.message.message}</span>
 						)}
