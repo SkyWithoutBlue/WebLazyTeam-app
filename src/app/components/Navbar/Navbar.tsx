@@ -1,23 +1,42 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { listItemVariants, listVariants } from '../../utils/motion'
 import Navlink from '../Navlink/Navlink'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import styles from './navbar.module.scss'
+
 const links = [
 	{ url: '/', title: 'О нас' },
 	{ url: '/portfolio', title: 'Портфолио' },
 	{ url: '/team', title: 'Команда' },
 	{ url: '/contacts', title: 'Контакты' },
 ]
-interface links {
+
+interface Links {
 	url: string
 	title: string
 }
+
 const Navbar = () => {
 	const [open, setOpen] = useState(false)
+	const [scrolled, setScrolled] = useState(false)
+
+	const handleScroll = () => {
+		if (window.scrollY > 50) {
+			setScrolled(true)
+		} else {
+			setScrolled(false)
+		}
+	}
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll)
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+		}
+	}, [])
 
 	const topVariants = {
 		closed: {
@@ -47,13 +66,19 @@ const Navbar = () => {
 	}
 
 	return (
-		<header className={styles.wrapper}>
+		<header
+			className={`${styles.wrapper} ${
+				scrolled
+					? 'hidden md:block bg-indigo-300 dark:bg-black transition-colors ease delay-300 rounded-b-[100px] '
+					: ''
+			}`}
+		>
 			<div className={styles.navTopContainer}>
 				<div className='flex justify-left md:justify-center gap-6 flex-col-reverse md:flex-row sm:m-4 '>
 					<Link href='/' className='text-xl'>
-						WebLazyTeam
+						Web<span className='text-[#FBF080]'>Lazy</span>Team
 					</Link>
-					<div className='flex justify-start'>
+					<div className='flex justify-start absolute top-3 right-5'>
 						<ThemeSwitcher />
 					</div>
 				</div>
@@ -79,17 +104,17 @@ const Navbar = () => {
 					<motion.div
 						variants={topVariants}
 						animate={open ? 'opened' : 'closed'}
-						className={styles.topLine}
+						className='rounded-md w-10 h-1 bg-black origin-left dark:bg-white'
 					></motion.div>
 					<motion.div
 						variants={centerVariants}
 						animate={open ? 'opened' : 'closed'}
-						className={styles.midLine}
+						className='rounded-md w-10 h-1 bg-black origin-left dark:bg-white'
 					></motion.div>
 					<motion.div
 						variants={bottomVariants}
 						animate={open ? 'opened' : 'closed'}
-						className={styles.bottomLine}
+						className='rounded-md w-10 h-1 bg-black origin-left dark:bg-white'
 					></motion.div>
 				</button>
 				{/* MENU LIST */}

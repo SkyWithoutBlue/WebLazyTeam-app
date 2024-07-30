@@ -14,10 +14,10 @@ const TransitionProvider = ({
 		<AnimatePresence mode='wait'>
 			<div
 				key={pathName}
-				className='min-h-screen flex flex-col bg-red-500 dark:bg-green-500'
+				className='min-h-screen flex flex-col bg-white dark:bg-black'
 			>
 				<motion.div
-					className='fixed bg-sky-500 rounded-b-[100px] z-40 w-full'
+					className='fixed bg-black rounded-b-[100px] z-40 w-full'
 					style={{ height: '0vh' }}
 					animate={{ height: '0vh' }}
 					exit={{ height: '140vh' }}
@@ -25,13 +25,13 @@ const TransitionProvider = ({
 				/>
 
 				<motion.div
-					className='fixed m-auto top-0 bottom-0 left-0 right-0 text-white text-8xl cursor-default z-50 w-fit h-fit'
+					className='fixed m-auto top-0 bottom-0 left-0 right-0 text-white text-4xl sm:text-5xl lg:text-7xl md:text-6xl xl:text-8xl cursor-default z-50 w-fit h-fit font-rubik-mono'
 					initial={{ opacity: 1 }}
 					animate={{ opacity: 0, display: 'none' }}
 					exit={{ opacity: 0 }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 				>
-					{pathName.substring(1)}
+					{pathName === '/' ? 'WebLazyTeam' : pathName.substring(1)}
 				</motion.div>
 
 				<motion.div

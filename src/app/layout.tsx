@@ -3,15 +3,17 @@ import { ThemeProvider } from 'next-themes'
 import { Rubik, Rubik_Mono_One } from 'next/font/google'
 import TransitionProvider from './components/TransitionProvider.tsx/TransitionProvider'
 import './globals.css'
-const rubikMonoOne = Rubik_Mono_One({
+
+const rubik = Rubik({
+	weight: ['400', '500', '700'],
 	subsets: ['latin'],
-	weight: ['400'],
-	variable: '--font-rubikMonoOne',
+	variable: '--font-rubik',
 })
-const rubik_init = Rubik({
-	subsets: ['latin'],
+
+const rubikMono = Rubik_Mono_One({
 	weight: ['400'],
-	variable: '--font-rubik-init',
+	subsets: ['latin'],
+	variable: '--font-rubik-mono',
 })
 
 export const metadata: Metadata = {
@@ -30,7 +32,7 @@ export default function RootLayout({
 			lang='ru'
 			className='overflow-x-hidden min-w-[320px]'
 		>
-			<body className={rubikMonoOne.className}>
+			<body className={`${rubik.variable} ${rubikMono.variable}`}>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'

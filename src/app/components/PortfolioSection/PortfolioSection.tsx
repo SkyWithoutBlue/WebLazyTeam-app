@@ -1,15 +1,16 @@
 import { underlineAnimation } from '@/app/utils/motion'
 import { motion } from 'framer-motion'
 import { PinContainer } from '../ui/3d-pin'
+
 const PortfolioSection = () => {
 	return (
 		<div
 			id='portfolio'
 			className='bg-white text-black dark:bg-black dark:text-white'
 		>
-			<div className='max-w-6xl m-auto p-4 relative flex flex-col justify-center h-screen'>
+			<div className='max-w-6xl m-auto p-4 relative flex flex-col justify-center'>
 				<div>
-					<h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4'>
+					<h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4 font-rubik-mono'>
 						Портфолио
 					</h1>
 					<motion.div
@@ -27,11 +28,11 @@ const PortfolioSection = () => {
 								href='https://www.google.ru/'
 							>
 								<div className='flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[15rem] h-[20rem] sm:w-[18rem] '>
-									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100'>
+									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100 font-rubik-mono'>
 										Проект 1:
 									</h3>
 									<div className='text-base !m-0 !p-0 font-normal'>
-										<span className='text-slate-500 '>
+										<span className='text-slate-500 font-rubik'>
 											Корпоративный сайт для компании XYZ.
 										</span>
 									</div>
@@ -45,11 +46,11 @@ const PortfolioSection = () => {
 								href='https://www.google.ru/'
 							>
 								<div className='flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[15rem] h-[20rem] sm:w-[18rem] '>
-									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100'>
+									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100 font-rubik-mono'>
 										Проект 2:
 									</h3>
 									<div className='text-base !m-0 !p-0 font-normal'>
-										<span className='text-slate-500 '>
+										<span className='text-slate-500 font-rubik'>
 											Интернет-магазин для бренда ABC.
 										</span>
 									</div>
@@ -63,11 +64,11 @@ const PortfolioSection = () => {
 								href='https://www.google.ru/'
 							>
 								<div className='flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[15rem] h-[20rem] sm:w-[18rem] '>
-									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100'>
+									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100 font-rubik-mono'>
 										Проект 3:
 									</h3>
 									<div className='text-base !m-0 !p-0 font-normal'>
-										<span className='text-slate-500 '>
+										<span className='text-slate-500 font-rubik'>
 											Лендинг для стартапа DEF.
 										</span>
 									</div>

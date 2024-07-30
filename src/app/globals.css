@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+	--font-rubik: 'Rubik', sans-serif;
+	--font-rubik-mono: 'Rubik Mono One', monospace;
+}
+
+.font-rubik {
+	font-family: var(--font-rubik);
+}
+
+.font-rubik-mono {
+	font-family: var(--font-rubik-mono);
+}

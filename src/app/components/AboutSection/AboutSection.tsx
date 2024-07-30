@@ -26,7 +26,7 @@ const AboutSection = () => {
 			className='bg-white text-black dark:bg-black dark:text-white  m-auto'
 		>
 			<div className='flex flex-col max-w-6xl m-auto p-4'>
-				<h1 className='flex justify-center items-center m-auto uppercase text-4xl sm:text-5xl p-2'>
+				<h1 className='flex justify-center items-center m-auto uppercase text-4xl sm:text-5xl p-2 font-rubik-mono'>
 					О НАС
 				</h1>
 				<motion.div
@@ -64,7 +64,7 @@ const AboutSection = () => {
 						transition={{ duration: 2 }}
 						viewport={{ once: true }}
 						variants={textAnimation}
-						className='text-1xl sm:text-2xl md:text-3xl md:w-1/2'
+						className='text-1xl sm:text-2xl md:text-3xl md:w-1/2 font-rubik'
 					>
 						Мы — команда{' '}
 						<span className='text-[#979CF8]'>

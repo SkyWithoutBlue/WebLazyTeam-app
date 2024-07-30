@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion'
-import { Rubik } from 'next/font/google'
 
 import { textAnimation, underlineAnimation } from '@/app/utils/motion'
-const RubikFont400 = Rubik({
-	subsets: ['latin'],
-	display: 'swap',
-	weight: '400',
-})
 
 const ServiceSection = () => {
 	return (
@@ -19,7 +13,7 @@ const ServiceSection = () => {
 						transition={{ duration: 2 }}
 						viewport={{ once: true }}
 						variants={textAnimation}
-						className='flex justify-center items-center m-auto uppercase text-4xl sm:text-5xl p-2'
+						className='flex justify-center items-center m-auto uppercase text-4xl sm:text-5xl p-2 font-rubik-mono'
 					>
 						Услуги
 					</motion.h1>
@@ -38,22 +32,18 @@ const ServiceSection = () => {
 							transition={{ duration: 2 }}
 							viewport={{ once: true }}
 							variants={textAnimation}
-							className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl'
+							className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl font-rubik-mono'
 						>
 							Разработка сайтов
 						</motion.h2>
-						<ul
-							className={`${'list-disc sm:text-2xl md:text-3xl lg:text-4xl'}+ ${
-								RubikFont400.className
-							}`}
-						>
+						<ul className='list-disc sm:text-2xl md:text-3xl lg:text-4xl'>
 							<motion.li
 								initial='hidden'
 								whileInView='visible'
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className='p-2'
+								className='p-2 font-rubik'
 							>
 								Корпоративные сайты: Создаем стильные и функциональные сайты для
 								бизнеса
@@ -64,7 +54,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className='p-2'
+								className='p-2 font-rubik'
 							>
 								Интернет-магазины: Разработка удобных и безопасных платформ для
 								онлайн-продаж
@@ -75,7 +65,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className='p-2'
+								className='p-2 font-rubik'
 							>
 								Лендинги: Эффективные одностраничные сайты для продвижения ваших
 								услуг или продуктов
@@ -89,22 +79,18 @@ const ServiceSection = () => {
 							transition={{ duration: 2 }}
 							viewport={{ once: true }}
 							variants={textAnimation}
-							className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl'
+							className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl font-rubik-mono'
 						>
 							Дизайн
 						</motion.h2>
-						<ul
-							className={`${'list-disc sm:text-2xl md:text-3xl lg:text-4xl'}+ ${
-								RubikFont400.className
-							}`}
-						>
+						<ul className='list-disc sm:text-2xl md:text-3xl lg:text-4xl'>
 							<motion.li
 								initial='hidden'
 								whileInView='visible'
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className='p-2'
+								className='p-2 font-rubik'
 							>
 								UI/UX дизайн: Разработка интуитивно понятного и привлекательного
 								интерфейса.
@@ -115,7 +101,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className='p-2'
+								className='p-2 font-rubik'
 							>
 								Брендинг: Создание уникального визуального стиля, который
 								выделит ваш бизнес.
@@ -129,22 +115,18 @@ const ServiceSection = () => {
 							transition={{ duration: 2 }}
 							viewport={{ once: true }}
 							variants={textAnimation}
-							className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl'
+							className='text-lg text-[#979CF8] sm:text-2xl md:text-3xl lg:text-4xl font-rubik-mono'
 						>
 							Поддержка и обслуживание
 						</motion.h2>
-						<ul
-							className={`${'list-disc sm:text-2xl md:text-3xl lg:text-4xl'}+ ${
-								RubikFont400.className
-							}`}
-						>
+						<ul className='list-disc sm:text-2xl md:text-3xl lg:text-4xl'>
 							<motion.li
 								initial='hidden'
 								whileInView='visible'
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className='p-2'
+								className='p-2 font-rubik'
 							>
 								Техническая поддержка: Обеспечиваем бесперебойную работу вашего
 								сайта.
@@ -155,7 +137,7 @@ const ServiceSection = () => {
 								transition={{ duration: 2 }}
 								viewport={{ once: true }}
 								variants={textAnimation}
-								className='p-2'
+								className='p-2 font-rubik'
 							>
 								SEO-оптимизация: Помогаем улучшить видимость вашего сайта в
 								поисковых системах.

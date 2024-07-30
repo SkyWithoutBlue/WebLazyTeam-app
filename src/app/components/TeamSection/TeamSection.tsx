@@ -38,7 +38,7 @@ const TeamSection = () => {
 		>
 			<div className='flex flex-col gap-7'>
 				<div className='max-w-6xl m-auto p-4'>
-					<motion.h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4'>
+					<motion.h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4 font-rubik-mono'>
 						команда
 					</motion.h1>
 					<motion.div
@@ -68,8 +68,12 @@ const TeamSection = () => {
 										height={176}
 									/>
 									<div className='flex flex-col gap-5'>
-										<h1 className='text-[#979CF8] text-[18px]'>{el.role}</h1>
-										<p className='text-[14px] sm:text-[18px]'>{el.desc}</p>
+										<h1 className='text-[#979CF8] text-[18px] font-rubik-mono'>
+											{el.role}
+										</h1>
+										<p className='text-[14px] sm:text-[18px] font-rubik'>
+											{el.desc}
+										</p>
 									</div>
 								</div>
 							</motion.div>

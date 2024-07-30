@@ -8,7 +8,7 @@ const TeamPage = () => {
 			className='pt-44'
 			initial={{ y: '-200vh' }}
 			animate={{ y: '0%' }}
-			transition={{ duration: 1 }}
+			transition={{ duration: 0.5 }}
 		>
 			<TeamSection />
 		</motion.div>

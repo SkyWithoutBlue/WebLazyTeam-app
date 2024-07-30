@@ -1,14 +1,23 @@
+import { Suspense, useEffect, useState } from 'react'
 import ContactForm from '../ContactForm/ContactForm'
 import Stars from '../ui/Stars'
 import Earth from './Earth'
-interface canvas {
-	width: number
-}
+
 const ContactSection = () => {
+	const [isEarthVisible, setIsEarthVisible] = useState(false)
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsEarthVisible(true)
+		}, 1000)
+
+		return () => clearTimeout(timer)
+	}, [])
+
 	return (
 		<div
 			id='contacts'
-			className='bg-white text-black dark:bg-black dark:text-white  m-auto min-h-screen w-screen relative flex justify-center items-center'
+			className='bg-white text-black dark:bg-black dark:text-white m-auto min-h-screen w-screen relative flex justify-center items-center font-rubik-mono'
 		>
 			<Stars />
 			<div className='m-auto p-4'>
@@ -16,9 +25,13 @@ const ContactSection = () => {
 					<section className='bg-sky-600 rounded-[50px] dark:bg-gray-900'>
 						<ContactForm />
 					</section>
-					<div className='w-full !h-[350px] lg:!w-1/2 lg:!h-[500px] relative'>
-						<Earth />
-					</div>
+					{isEarthVisible && (
+						<Suspense fallback={<div>Loading...</div>}>
+							<div className='w-full !h-[350px] lg:!w-1/2 lg:!h-[500px] relative'>
+								<Earth />
+							</div>
+						</Suspense>
+					)}
 				</div>
 			</div>
 		</div>

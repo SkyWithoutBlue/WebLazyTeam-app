@@ -82,7 +82,7 @@ export default function ContactForm() {
 			<h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white py-10 mx-auto max-w-screen-md'>
 				Свяжитесь с нами
 			</h2>
-			<p className='mb-8 lg:mb-10 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl'>
+			<p className='mb-8 lg:mb-10 font-light text-center text-white dark:text-gray-400 sm:text-xl'>
 				Получите бесплатную консультацию!
 			</p>
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
