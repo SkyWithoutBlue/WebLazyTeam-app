@@ -47,70 +47,68 @@ const Navbar = () => {
 	}
 
 	return (
-		<div className='absolute z-10'>
-			<header className={styles.wrapper}>
-				<div className={styles.navTopContainer}>
-					<div className='flex justify-left md:justify-center gap-6 flex-col-reverse md:flex-row sm:m-4 md:mt-[55px]'>
-						<Link href='/' className='text-xl'>
-							WebLazyTeam
-						</Link>
-						<div className='flex justify-start'>
-							<ThemeSwitcher />
-						</div>
-					</div>
-
-					<div className={styles.links}>
-						{links.map(link => (
-							<Navlink
-								url={`${link.url}`}
-								title={`${link.title}`}
-								key={link.title}
-							/>
-						))}
+		<header className={styles.wrapper}>
+			<div className={styles.navTopContainer}>
+				<div className='flex justify-left md:justify-center gap-6 flex-col-reverse md:flex-row sm:m-4 '>
+					<Link href='/' className='text-xl'>
+						WebLazyTeam
+					</Link>
+					<div className='flex justify-start'>
+						<ThemeSwitcher />
 					</div>
 				</div>
 
-				{/* RESPONSIVE MENU */}
-				<div className={styles.menuWrapper}>
-					{/* MENU BUTTON */}
-					<button
-						className={styles.menuButton}
-						onClick={() => setOpen(prev => !prev)}
+				<div className={styles.links}>
+					{links.map(link => (
+						<Navlink
+							url={`${link.url}`}
+							title={`${link.title}`}
+							key={link.title}
+						/>
+					))}
+				</div>
+			</div>
+
+			{/* RESPONSIVE MENU */}
+			<div className={styles.menuWrapper}>
+				{/* MENU BUTTON */}
+				<button
+					className={styles.menuButton}
+					onClick={() => setOpen(prev => !prev)}
+				>
+					<motion.div
+						variants={topVariants}
+						animate={open ? 'opened' : 'closed'}
+						className={styles.topLine}
+					></motion.div>
+					<motion.div
+						variants={centerVariants}
+						animate={open ? 'opened' : 'closed'}
+						className={styles.midLine}
+					></motion.div>
+					<motion.div
+						variants={bottomVariants}
+						animate={open ? 'opened' : 'closed'}
+						className={styles.bottomLine}
+					></motion.div>
+				</button>
+				{/* MENU LIST */}
+				{open && (
+					<motion.div
+						variants={listVariants}
+						initial='closed'
+						animate='opened'
+						className={styles.menuList}
 					>
-						<motion.div
-							variants={topVariants}
-							animate={open ? 'opened' : 'closed'}
-							className={styles.topLine}
-						></motion.div>
-						<motion.div
-							variants={centerVariants}
-							animate={open ? 'opened' : 'closed'}
-							className={styles.midLine}
-						></motion.div>
-						<motion.div
-							variants={bottomVariants}
-							animate={open ? 'opened' : 'closed'}
-							className={styles.bottomLine}
-						></motion.div>
-					</button>
-					{/* MENU LIST */}
-					{open && (
-						<motion.div
-							variants={listVariants}
-							initial='closed'
-							animate='opened'
-							className={styles.menuList}
-						>
-							{links.map(link => (
-								<motion.div variants={listItemVariants} key={link.title}>
-									<Link href={link.url}>{link.title}</Link>
-								</motion.div>
-							))}
-						</motion.div>
-					)}
-				</div>
-			</header>
-		</div>
+						{links.map(link => (
+							<motion.div variants={listItemVariants} key={link.title}>
+								<Link href={link.url}>{link.title}</Link>
+							</motion.div>
+						))}
+					</motion.div>
+				)}
+			</div>
+		</header>
 	)
 }
 

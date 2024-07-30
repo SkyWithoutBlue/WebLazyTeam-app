@@ -5,21 +5,21 @@ const PortfolioSection = () => {
 	return (
 		<div
 			id='portfolio'
-			className='bg-white text-black dark:bg-black dark:text-white  m-auto '
+			className='bg-white text-black dark:bg-black dark:text-white'
 		>
-			<div className='max-w-6xl m-auto p-4 relative h-full'>
-				<h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4'>
-					Портфолио
-				</h1>
-				<motion.div
-					initial='hidden'
-					whileInView='visible'
-					transition={{ duration: 1 }}
-					viewport={{ once: true }}
-					variants={underlineAnimation}
-					className='w-full h-1 bg-red-300 my-4'
-				></motion.div>
+			<div className='max-w-6xl m-auto p-4 relative flex flex-col justify-center h-screen'>
 				<div>
+					<h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4'>
+						Портфолио
+					</h1>
+					<motion.div
+						initial='hidden'
+						whileInView='visible'
+						transition={{ duration: 1 }}
+						viewport={{ once: true }}
+						variants={underlineAnimation}
+						className=' w-full h-1 bg-red-300 my-4 max-w-6xl'
+					/>
 					<div className='flex flex-col lg:flex-row  gap-[5rem] lg:gap-[unset] my-8 sm:my-16 justify-center'>
 						<div className=' w-full flex items-center justify-center'>
 							<PinContainer

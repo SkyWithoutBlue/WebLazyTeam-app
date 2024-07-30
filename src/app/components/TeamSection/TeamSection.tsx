@@ -1,3 +1,4 @@
+'use client'
 import { textAnimation, underlineAnimation } from '@/app/utils/motion'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -35,19 +36,19 @@ const TeamSection = () => {
 			id='crew'
 			className='bg-white text-black dark:bg-black dark:text-white  m-auto '
 		>
-			<div className='max-w-6xl m-auto p-4 relative'>
-				<motion.h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4'>
-					команда
-				</motion.h1>
-				<motion.div
-					initial='hidden'
-					whileInView='visible'
-					transition={{ duration: 1 }}
-					viewport={{ once: true }}
-					variants={underlineAnimation}
-					className='w-full h-1 bg-red-300 my-4'
-				></motion.div>
-				<div className='flex flex-col gap-7'>
+			<div className='flex flex-col gap-7'>
+				<div className='max-w-6xl m-auto p-4'>
+					<motion.h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4'>
+						команда
+					</motion.h1>
+					<motion.div
+						initial='hidden'
+						whileInView='visible'
+						transition={{ duration: 1 }}
+						viewport={{ once: true }}
+						variants={underlineAnimation}
+						className='w-full h-1 bg-red-300 my-4'
+					/>
 					<div className='flex flex-col gap-10 py-8'>
 						{teamMembers.map(el => (
 							<motion.div
@@ -75,14 +76,6 @@ const TeamSection = () => {
 						))}
 					</div>
 				</div>
-				<motion.div
-					initial='hidden'
-					whileInView='visible'
-					transition={{ duration: 1 }}
-					viewport={{ once: true }}
-					variants={underlineAnimation}
-					className='w-full h-1 bg-red-300 my-4'
-				></motion.div>
 			</div>
 		</div>
 	)

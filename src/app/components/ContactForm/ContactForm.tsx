@@ -11,7 +11,6 @@ import * as yup from 'yup'
 import { Button } from '../ui/moving-border'
 import Alert from './Alert'
 
-// Определяем схему валидации с использованием yup
 const schema = yup.object().shape({
 	fullname: yup.string().required('Пожалуйста введите ваше имя'),
 	tel: yup

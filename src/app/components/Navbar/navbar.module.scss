@@ -7,8 +7,9 @@
 	position: relative;
 	width: 100vw;
 	align-items: center;
-	height: 100px;
-
+	position: fixed;
+	top: 0;
+	z-index: 20;
 	@media (min-width: 640px) {
 		padding-left: 32px;
 		padding-right: 32px;
