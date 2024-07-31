@@ -6,7 +6,7 @@ import PortfolioSection from '../components/PortfolioSection/PortfolioSection'
 const PortfolioPage = () => {
 	return (
 		<motion.div
-			className=' pt-12 md:pt-28'
+			className='pt-20 md:pt-32'
 			initial={{ y: '-200vh' }}
 			animate={{ y: '0%' }}
 			transition={{ duration: 0.5 }}
