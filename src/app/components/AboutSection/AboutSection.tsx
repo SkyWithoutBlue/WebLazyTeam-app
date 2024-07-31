@@ -26,7 +26,7 @@ const AboutSection = () => {
 			className='bg-white text-black dark:bg-black dark:text-white  m-auto'
 		>
 			<div className='flex flex-col max-w-6xl m-auto p-4'>
-				<h1 className='flex justify-center items-center m-auto uppercase text-4xl sm:text-5xl p-2 font-rubik-mono'>
+				<h1 className='flex  items-center m-auto uppercase text-4xl sm:text-5xl p-2 font-rubik-mono'>
 					О НАС
 				</h1>
 				<motion.div

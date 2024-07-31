@@ -22,7 +22,7 @@ const ContactSection = () => {
 			<Stars />
 			<div className='m-auto p-4'>
 				<div className='max-w-6xl m-auto flex items-center gap-4 justify-between flex-col-reverse lg:flex-row'>
-					<section className='bg-sky-600 rounded-[50px] dark:bg-gray-900'>
+					<section className=' rounded-[50px] bg-indigo-400 dark:bg-gray-900'>
 						<ContactForm />
 					</section>
 					{isEarthVisible && (

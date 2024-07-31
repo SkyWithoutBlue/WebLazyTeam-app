@@ -82,20 +82,16 @@ const Navbar = () => {
 		<header
 			className={`${styles.wrapper} ${
 				scrolled
-					? 'hidden md:block bg-indigo-300 dark:bg-black transition-colors ease delay-300 rounded-b-[100px] '
+					? 'hidden lg:block backdrop-blur-3xl transition-colors ease delay-300 rounded-b-[100px] '
 					: ''
 			}`}
 		>
-			<div className={styles.navTopContainer}>
-				<div className='flex justify-left md:justify-center gap-2 flex-col-reverse md:flex-row sm:m-4 mt-4'>
-					<Link href='/' className='text-2xl md:text-3xl font-rubik-mono'>
+			<div className='flex justify-between md:w-full pt-4 items-center gap max-w-6xl lg:m-auto'>
+				<div className='flex justify-left'>
+					<Link href='/' className='text-xl md:text-2xl font-rubik-mono'>
 						Web<span className='text-[#FBF080]'>Lazy</span>Team
 					</Link>
-					<div className='flex items-center justify-start'>
-						<ThemeSwitcher />
-					</div>
 				</div>
-
 				<div className={styles.links}>
 					{links.map(link => (
 						<Navlink
@@ -104,6 +100,9 @@ const Navbar = () => {
 							key={link.title}
 						/>
 					))}
+				</div>
+				<div className='hidden lg:flex'>
+					<ThemeSwitcher />
 				</div>
 			</div>
 
@@ -143,6 +142,7 @@ const Navbar = () => {
 								<Link href={link.url}>{link.title}</Link>
 							</motion.div>
 						))}
+						<ThemeSwitcher />
 					</motion.div>
 				)}
 			</div>

@@ -3,7 +3,7 @@ import { Button } from '../ui/moving-border'
 import Stars from '../ui/Stars'
 const MainSection = () => {
 	return (
-		<section className='flex px-4 relative bg-[radial-gradient(_89.76%_53.41%_at_76.46%_53.61%,_rgb(182,_226,_251)_0%,_rgb(168,_195,_250)_44.49999928474426%,_rgb(151,_156,_248)_100%)] dark:bg-gradient-to-r from-slate-900 to-slate-700 '>
+		<section className='flex px-4 relative bg-[radial-gradient(_89.76%_53.41%_at_76.46%_53.61%,_rgb(182,_226,_251)_0%,_rgb(168,_195,_250)_44.49999928474426%,_rgb(151,_156,_248)_100%)] dark:bg-gradient-to-r from-slate-900 to-slate-700 h-full'>
 			<Stars />
 			<div className=' max-w-7xl m-auto flex flex-col lg:flex-row lg:justify-between w-screen items-center'>
 				<div className='flex flex-col gap-8 mt-8 items-center sm:items-start lg:w-1/2 pt-32'>

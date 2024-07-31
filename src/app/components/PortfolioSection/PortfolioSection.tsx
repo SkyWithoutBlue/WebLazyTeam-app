@@ -1,5 +1,6 @@
 import { underlineAnimation } from '@/app/utils/motion'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { PinContainer } from '../ui/3d-pin'
 
 const PortfolioSection = () => {
@@ -28,7 +29,7 @@ const PortfolioSection = () => {
 								href='https://www.google.ru/'
 							>
 								<div className='flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[15rem] h-[20rem] sm:w-[18rem] '>
-									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100 font-rubik-mono'>
+									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-xl text-slate-100 font-rubik-mono'>
 										Проект 1:
 									</h3>
 									<div className='text-base !m-0 !p-0 font-normal'>
@@ -36,7 +37,13 @@ const PortfolioSection = () => {
 											Корпоративный сайт для компании XYZ.
 										</span>
 									</div>
-									<div className='flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500' />
+									<Image
+										src='/Example_1.png'
+										alt=''
+										width={500}
+										height={500}
+										className='flex flex-1 w-full rounded-lg mt-4'
+									/>
 								</div>
 							</PinContainer>
 						</div>
@@ -46,7 +53,7 @@ const PortfolioSection = () => {
 								href='https://www.google.ru/'
 							>
 								<div className='flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[15rem] h-[20rem] sm:w-[18rem] '>
-									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100 font-rubik-mono'>
+									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-xl text-slate-100 font-rubik-mono'>
 										Проект 2:
 									</h3>
 									<div className='text-base !m-0 !p-0 font-normal'>
@@ -54,7 +61,13 @@ const PortfolioSection = () => {
 											Интернет-магазин для бренда ABC.
 										</span>
 									</div>
-									<div className='flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500' />
+									<Image
+										src='/Example_2.png'
+										alt=''
+										width={500}
+										height={500}
+										className='flex flex-1 w-full rounded-lg mt-4'
+									/>
 								</div>
 							</PinContainer>
 						</div>
@@ -64,7 +77,7 @@ const PortfolioSection = () => {
 								href='https://www.google.ru/'
 							>
 								<div className='flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[15rem] h-[20rem] sm:w-[18rem] '>
-									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100 font-rubik-mono'>
+									<h3 className='max-w-xs !pb-2 !m-0 font-bold  text-xl text-slate-100 font-rubik-mono'>
 										Проект 3:
 									</h3>
 									<div className='text-base !m-0 !p-0 font-normal'>
@@ -72,7 +85,13 @@ const PortfolioSection = () => {
 											Лендинг для стартапа DEF.
 										</span>
 									</div>
-									<div className='flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500' />
+									<Image
+										src='/Example_3.png'
+										alt=''
+										width={500}
+										height={500}
+										className='flex flex-1 w-full rounded-lg mt-4'
+									/>
 								</div>
 							</PinContainer>
 						</div>
