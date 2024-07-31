@@ -87,11 +87,11 @@ const Navbar = () => {
 			}`}
 		>
 			<div className={styles.navTopContainer}>
-				<div className='flex justify-left md:justify-center gap-6 flex-col-reverse md:flex-row sm:m-4 '>
-					<Link href='/' className='text-xl'>
+				<div className='flex justify-left md:justify-center gap-2 flex-col-reverse md:flex-row sm:m-4 mt-4'>
+					<Link href='/' className='text-2xl md:text-3xl font-rubik-mono'>
 						Web<span className='text-[#FBF080]'>Lazy</span>Team
 					</Link>
-					<div className='flex justify-start absolute top-3 right-5'>
+					<div className='flex items-center justify-start'>
 						<ThemeSwitcher />
 					</div>
 				</div>
