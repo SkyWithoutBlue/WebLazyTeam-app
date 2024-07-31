@@ -6,7 +6,7 @@ import ContactSection from '../components/ContactSection/ContactSection'
 const ContactsPage = () => {
 	return (
 		<motion.div
-			className=' h-full pt-32'
+			className=' h-full pt-12 md:pt-28'
 			initial={{ y: '-200vh' }}
 			animate={{ y: '0%' }}
 			transition={{ duration: 0.5 }}

@@ -14,11 +14,6 @@ const links = [
 	{ url: '/contacts', title: 'Контакты' },
 ]
 
-interface Links {
-	url: string
-	title: string
-}
-
 const Navbar = () => {
 	const [open, setOpen] = useState(false)
 	const [scrolled, setScrolled] = useState(false)
@@ -37,6 +32,24 @@ const Navbar = () => {
 			window.removeEventListener('scroll', handleScroll)
 		}
 	}, [])
+	/* Scroll Lock */
+	useEffect(() => {
+		if (open) {
+			const scrollY = window.scrollY
+			document.body.style.position = 'fixed'
+			document.body.style.top = `-${scrollY}px`
+		} else {
+			const scrollY = document.body.style.top
+			document.body.style.position = ''
+			document.body.style.top = ''
+			window.scrollTo(0, parseInt(scrollY || '0') * -1)
+		}
+
+		return () => {
+			document.body.style.position = ''
+			document.body.style.top = ''
+		}
+	}, [open])
 
 	const topVariants = {
 		closed: {

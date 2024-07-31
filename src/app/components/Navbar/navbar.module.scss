@@ -76,7 +76,9 @@
 	height: 2rem;
 	background-color: transparent;
 }
-
+.no-scroll {
+	overflow: hidden !important;
+}
 .menuList {
 	display: flex;
 	position: absolute;
