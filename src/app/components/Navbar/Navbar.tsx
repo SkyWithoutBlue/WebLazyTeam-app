@@ -1,4 +1,4 @@
-'use client'
+// Обновите импорт (если необходимо)
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -19,6 +19,11 @@ const links = [
 	{ url: '/team', title: 'Команда' },
 	{ url: '/contacts', title: 'Контакты' },
 ]
+
+const themeSwitcherVariants = {
+	hidden: { opacity: 0, y: 20 },
+	visible: { opacity: 1, y: 0 },
+}
 
 const Navbar = () => {
 	const [open, setOpen] = useState(false)
@@ -72,7 +77,7 @@ const Navbar = () => {
 						Web<span className='text-[#FBF080]'>Lazy</span>Team
 					</Link>
 				</div>
-				<div className='hidden p-1 lg:p-4 lg:flex gap-4 justify-center  border-[1px] border-[#add7ff] rounded-3xl items-center m-auto h-[66px]'>
+				<div className='hidden p-1 lg:p-4 lg:flex gap-4 justify-center border-[1px] border-[#add7ff] rounded-3xl items-center m-auto h-[66px]'>
 					{links.map(link => (
 						<Navlink
 							url={`${link.url}`}
@@ -117,8 +122,14 @@ const Navbar = () => {
 						animate='opened'
 						className='flex absolute top-0 left-0 z-40 flex-col gap-8 justify-center items-center w-screen h-screen text-4xl overflow-hidden bg-black text-white'
 					>
-						{links.map(link => (
-							<motion.div variants={listItemVariants} key={link.title}>
+						{links.map((link, index) => (
+							<motion.div
+								variants={listItemVariants}
+								key={link.title}
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ delay: index * 0.1 }}
+							>
 								<Link
 									href={link.url}
 									className={`${'p-1 text-3xl rounded-2xl text-white flex items-center whitespace-nowrap font-rubik-mono'} ${
@@ -130,7 +141,15 @@ const Navbar = () => {
 								</Link>
 							</motion.div>
 						))}
-						<ThemeSwitcher />
+
+						<motion.div
+							variants={themeSwitcherVariants}
+							initial='hidden'
+							animate='visible'
+							transition={{ delay: links.length * 0.1 }}
+						>
+							<ThemeSwitcher />
+						</motion.div>
 					</motion.div>
 				)}
 			</div>

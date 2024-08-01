@@ -23,7 +23,7 @@ const PortfolioSection = () => {
 						className=' w-full h-1 bg-red-300 my-4 max-w-6xl'
 					/>
 
-					<div className='flex flex-col lg:flex-row gap-[5rem] lg:gap-[unset] my-8 sm:my-16 justify-between items-center h-screen'>
+					<div className='flex flex-col lg:flex-row gap-[5rem] lg:gap-[unset] my-8 sm:my-16 justify-between items-center lg:h-screen'>
 						<div className='w-full flex items-center justify-center'>
 							<PinContainer
 								title='ССЫЛКА НА САЙТ'
