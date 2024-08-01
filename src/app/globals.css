@@ -13,3 +13,6 @@
 .font-rubik-mono {
 	font-family: var(--font-rubik-mono);
 }
+html {
+	scroll-behavior: smooth;
+}

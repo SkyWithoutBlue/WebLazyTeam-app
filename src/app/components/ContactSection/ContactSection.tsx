@@ -16,13 +16,13 @@ const ContactSection = () => {
 
 	return (
 		<div
-			id='contacts'
+			id='contacts' // Убедитесь, что id установлен
 			className='bg-white text-black dark:bg-black dark:text-white m-auto min-h-screen w-screen relative flex justify-center items-center font-rubik-mono'
 		>
 			<Stars />
 			<div className='m-auto p-4'>
 				<div className='max-w-6xl m-auto flex items-center gap-4 justify-between flex-col-reverse lg:flex-row'>
-					<section className=' rounded-[50px] bg-indigo-400 dark:bg-gray-900'>
+					<section className='rounded-[50px] bg-indigo-400 dark:bg-gray-900'>
 						<ContactForm />
 					</section>
 					{isEarthVisible && (
