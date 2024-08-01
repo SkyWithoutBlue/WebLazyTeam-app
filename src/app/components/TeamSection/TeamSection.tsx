@@ -1,11 +1,13 @@
 'use client'
-import { textAnimation, underlineAnimation } from '@/app/utils/motion'
+import { underlineAnimation } from '@/app/utils/motion'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import AnimatedHeading from '../AnimatedHeading/AnimatedHeading'
+
 const teamMembers = [
 	{
-		photo: '/',
-		role: 'Менеджер',
+		photo: '/Member_Designer.png',
+		role: 'Топ-Менеджер',
 		desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,commodi esse distinctio perferendis, obcaecati nam repudiandae reiciendis vitae possimus?',
 	},
 	{
@@ -30,6 +32,19 @@ const teamMembers = [
 	},
 ]
 
+const cardVariants = {
+	hidden: { opacity: 0, scale: 0.8, y: 50 },
+	visible: {
+		opacity: 1,
+		scale: 1,
+		y: 0,
+		transition: {
+			duration: 0.8,
+			ease: 'easeOut',
+		},
+	},
+}
+
 const TeamSection = () => {
 	return (
 		<div
@@ -38,9 +53,7 @@ const TeamSection = () => {
 		>
 			<div className='flex flex-col gap-7'>
 				<div className='max-w-6xl m-auto p-4'>
-					<motion.h1 className='flex justify-center items-center m-auto text-4xl sm:text-5xl uppercase p-4 font-rubik-mono'>
-						команда
-					</motion.h1>
+					<AnimatedHeading text='Команда' />
 					<motion.div
 						initial='hidden'
 						whileInView='visible'
@@ -50,31 +63,30 @@ const TeamSection = () => {
 						className='w-full h-1 bg-red-300 my-4'
 					/>
 					<div className='flex flex-col gap-10 py-8'>
-						{teamMembers.map(el => (
+						{teamMembers.map((el, index) => (
 							<motion.div
+								key={el.role}
 								initial='hidden'
 								whileInView='visible'
-								transition={{ duration: 2 }}
+								transition={{ duration: 0.6, delay: index * 0.2 }}
 								viewport={{ once: true }}
-								variants={textAnimation}
-								key={el.role}
+								variants={cardVariants}
+								className='flex items-center gap-12 p-4 rounded-full dark:shadow-gray-500 md:shadow-lg transition-transform'
 							>
-								<div className='flex hover:scale-105 items-center gap-12 rounded-full'>
-									<Image
-										className='w-24 sm:w-36 sm:h-36 md:w-44 md:h-44'
-										src='/Member_Designer.png'
-										alt=''
-										width={176}
-										height={176}
-									/>
-									<div className='flex flex-col gap-5'>
-										<h1 className='text-[#979CF8] text-[18px] font-rubik-mono'>
-											{el.role}
-										</h1>
-										<p className='text-[14px] sm:text-[18px] font-rubik'>
-											{el.desc}
-										</p>
-									</div>
+								<Image
+									className='w-24 sm:w-36 sm:h-36 md:w-44 md:h-44'
+									src={el.photo}
+									alt={el.role}
+									width={176}
+									height={176}
+								/>
+								<div className='flex flex-col gap-5'>
+									<h1 className='text-[#979CF8] text-[18px] font-rubik-mono'>
+										{el.role}
+									</h1>
+									<p className='text-[14px] sm:text-[18px] font-rubik'>
+										{el.desc}
+									</p>
 								</div>
 							</motion.div>
 						))}

@@ -15,7 +15,7 @@ const MainSection = () => {
 					</h2>
 					<Button
 						borderRadius='1.75rem'
-						className='bg-indigo-400 dark:bg-slate-900 border-2 text-white dark:text-white border-[#add7ff] dark:border-slate-800 hover:border-sky-100 hover:transition-colors hover:duration-400 '
+						className='bg-indigo-400 dark:bg-slate-900 border-2 text-white dark:text-white border-[#add7ff] dark:border-slate-800 hover:border-sky-100 hover:transition-colors hover:duration-400 dark:hover:border-sky-100'
 					>
 						Заказать
 					</Button>

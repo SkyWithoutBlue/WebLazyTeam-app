@@ -15,20 +15,20 @@ const ContactSection = memo(LazyContactSection)
 
 export default function Home() {
 	return (
-		<motion.div
-			className=' h-full bg-black'
-			initial={{ y: '-2000vh' }}
-			animate={{ y: '0vh' }}
-			transition={{ duration: 0.5 }}
-		>
-			<Suspense fallback={<div>Loading...</div>}>
+		<Suspense fallback={<div>Loading...</div>}>
+			<motion.div
+				className=' h-full bg-black'
+				initial={{ y: '-200vh' }}
+				animate={{ y: '0vh' }}
+				transition={{ duration: 0.5 }}
+			>
 				<MainSection />
-				<AboutSection />
-				<ServiceSection />
-				<PortfolioSection />
-				<TeamSection />
-				<ContactSection />
-			</Suspense>
-		</motion.div>
+			</motion.div>
+			<AboutSection />
+			<ServiceSection />
+			<PortfolioSection />
+			<TeamSection />
+			<ContactSection />
+		</Suspense>
 	)
 }

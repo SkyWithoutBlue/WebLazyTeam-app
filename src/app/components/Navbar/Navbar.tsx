@@ -1,11 +1,17 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { listItemVariants, listVariants } from '../../utils/motion'
+import {
+	bottomVariants,
+	centerVariants,
+	listItemVariants,
+	listVariants,
+	topVariants,
+} from '../../utils/motion'
 import Navlink from '../Navlink/Navlink'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
-import styles from './navbar.module.scss'
 
 const links = [
 	{ url: '/', title: 'О нас' },
@@ -17,9 +23,10 @@ const links = [
 const Navbar = () => {
 	const [open, setOpen] = useState(false)
 	const [scrolled, setScrolled] = useState(false)
+	const pathName = usePathname()
 
 	const handleScroll = () => {
-		if (window.scrollY > 1) {
+		if (window.scrollY > 20) {
 			setScrolled(true)
 		} else {
 			setScrolled(false)
@@ -32,7 +39,7 @@ const Navbar = () => {
 			window.removeEventListener('scroll', handleScroll)
 		}
 	}, [])
-	/* Scroll Lock */
+
 	useEffect(() => {
 		if (open) {
 			const scrollY = window.scrollY
@@ -51,48 +58,21 @@ const Navbar = () => {
 		}
 	}, [open])
 
-	const topVariants = {
-		closed: {
-			rotate: 0,
-		},
-		opened: {
-			rotate: 45,
-			backgroundColor: 'rgb(255,255,255)',
-		},
-	}
-	const centerVariants = {
-		closed: {
-			opacity: 1,
-		},
-		opened: {
-			opacity: 0,
-		},
-	}
-	const bottomVariants = {
-		closed: {
-			rotate: 0,
-		},
-		opened: {
-			rotate: -45,
-			backgroundColor: 'rgb(255,255,255)',
-		},
-	}
-
 	return (
 		<header
-			className={`${styles.wrapper} ${
+			className={`${'flex items-center justify-between px-4 w-screen fixed top-0 z-[60]'} ${
 				scrolled
-					? 'hidden lg:block backdrop-blur-3xl transition-colors ease delay-300 rounded-b-[100px] '
+					? 'hidden lg:block backdrop-blur-3xl border-b-[1px] border-red-300'
 					: ''
 			}`}
 		>
-			<div className='flex justify-between md:w-full pt-4 items-center gap max-w-6xl lg:m-auto'>
+			<div className='flex justify-between md:w-full pt-5 lg:p-4 gap max-w-6xl lg:m-auto items-center'>
 				<div className='flex justify-left'>
 					<Link href='/' className='text-xl md:text-2xl font-rubik-mono'>
 						Web<span className='text-[#FBF080]'>Lazy</span>Team
 					</Link>
 				</div>
-				<div className={styles.links}>
+				<div className='hidden p-1 lg:p-4 lg:flex gap-4 justify-center  border-[1px] border-[#add7ff] rounded-3xl items-center m-auto h-[66px]'>
 					{links.map(link => (
 						<Navlink
 							url={`${link.url}`}
@@ -107,10 +87,10 @@ const Navbar = () => {
 			</div>
 
 			{/* RESPONSIVE MENU */}
-			<div className={styles.menuWrapper}>
+			<div className='flex lg:hidden'>
 				{/* MENU BUTTON */}
 				<button
-					className={styles.menuButton}
+					className='flex relative z-50 flex-col justify-between w-10 h-8'
 					onClick={() => setOpen(prev => !prev)}
 				>
 					<motion.div
@@ -135,11 +115,19 @@ const Navbar = () => {
 						variants={listVariants}
 						initial='closed'
 						animate='opened'
-						className={styles.menuList}
+						className='flex absolute top-0 left-0 z-40 flex-col gap-8 justify-center items-center w-screen h-screen text-4xl overflow-hidden bg-black text-white'
 					>
 						{links.map(link => (
 							<motion.div variants={listItemVariants} key={link.title}>
-								<Link href={link.url}>{link.title}</Link>
+								<Link
+									href={link.url}
+									className={`${'p-1 text-3xl rounded-2xl text-white flex items-center whitespace-nowrap font-rubik-mono'} ${
+										pathName === link.url &&
+										`${'font-semibold text-[#fbf080] dark:text-[#fbf080]'}`
+									}`}
+								>
+									{link.title}
+								</Link>
 							</motion.div>
 						))}
 						<ThemeSwitcher />
