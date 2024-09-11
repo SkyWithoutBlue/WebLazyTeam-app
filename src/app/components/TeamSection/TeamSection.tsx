@@ -74,7 +74,7 @@ const TeamSection = () => {
 								className='flex items-center gap-12 p-4 rounded-full dark:shadow-gray-500 md:shadow-lg transition-transform'
 							>
 								<Image
-									className='w-24 sm:w-36 sm:h-36 md:w-44 md:h-44'
+									className='w-24 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full'
 									src={el.photo}
 									alt={el.role}
 									width={176}

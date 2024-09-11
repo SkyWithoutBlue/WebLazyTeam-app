@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-import { textAnimation, underlineAnimation } from '@/app/utils/motion'
+import { textAnimation, contentVariant, underlineAnimation } from '@/app/utils/motion'
 import AnimatedHeading from '../AnimatedHeading/AnimatedHeading'
 import AnimatedSubHeading from '../AnimatedSubHeading/AnimatedSubHeading'
 
@@ -32,7 +32,7 @@ const ServiceSection = () => {
 									initial='hidden'
 									whileInView='visible'
 									viewport={{ once: true }}
-									variants={textAnimation}
+									variants={contentVariant}
 									className='p-2 font-rubik'
 								>
 									{text}
@@ -52,7 +52,7 @@ const ServiceSection = () => {
 									initial='hidden'
 									whileInView='visible'
 									viewport={{ once: true }}
-									variants={textAnimation}
+									variants={contentVariant}
 									className='p-2 font-rubik'
 								>
 									{text}
@@ -73,7 +73,7 @@ const ServiceSection = () => {
 									initial='hidden'
 									whileInView='visible'
 									viewport={{ once: true }}
-									variants={textAnimation}
+									variants={contentVariant}
 									className='p-2 font-rubik'
 								>
 									{text}

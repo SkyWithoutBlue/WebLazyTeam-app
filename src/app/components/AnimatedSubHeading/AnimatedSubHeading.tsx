@@ -1,22 +1,10 @@
 import { motion } from 'framer-motion'
-
+import { textVariant } from '@/app/utils/motion'
 interface AnimatedHeadingProps {
 	text: string
 }
 
-const textVariant = {
-	hidden: { opacity: 0, x: -100 },
-	visible: {
-		opacity: 1,
-		x: 0,
-		transition: {
-			duration: 1.5,
-			ease: 'easeInOut',
-			type: 'spring',
-			stiffness: 100,
-		},
-	},
-}
+
 
 const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({ text }) => {
 	return (

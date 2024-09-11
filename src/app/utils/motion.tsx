@@ -80,3 +80,30 @@ export const bottomVariants = {
 		backgroundColor: 'rgb(255,255,255)',
 	},
 }
+
+export const textVariant = {
+	hidden: { opacity: 0, x: -100 },
+	visible: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			duration: 1.5,
+			ease: 'easeInOut',
+			type: 'spring',
+			stiffness: 100,
+		},
+	},
+}
+export const contentVariant = {
+	hidden: { opacity: 0, x: -100 },
+	visible: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			duration: 2.5,
+			ease: 'easeInOut',
+			type: 'spring',
+			stiffness: 200,
+		},
+	},
+}
